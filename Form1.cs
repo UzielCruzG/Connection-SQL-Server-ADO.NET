@@ -21,7 +21,7 @@ namespace ProyectoV2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*
+            
             //AGREGAR
             try
             {
@@ -104,7 +104,7 @@ namespace ProyectoV2
 
             Console.Read();
 
-            */
+            
             /*
                         //ACTUALIZAR
                         try
@@ -192,10 +192,10 @@ namespace ProyectoV2
 
             
             
-
+            
 
             /*TRIGGERS*/
-            /*Trigger 1 - Sucursal*/
+            /*Trigger 1 - Sucursal*//*
             try
             {
                 var connectionString = ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString;
@@ -225,7 +225,7 @@ namespace ProyectoV2
 
 
 
-            /*Trigger 2 - Area*/
+            /*Trigger 2 - Area*//*
             try
             {
                 var connectionString = ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString;
@@ -251,9 +251,9 @@ namespace ProyectoV2
 
             Console.Read();
 
+            */
 
-
-            /*Trigger 3 - Socios*/
+            /*Trigger 3 - Socios*//*
             try
             {
                 var connectionString = ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString;
@@ -267,9 +267,9 @@ namespace ProyectoV2
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@nombre", "Jair"));//evitar la vunerabilidad sql injection vidio 5
                         cmd.Parameters.Add(new SqlParameter("@apellido", "Montalvo"));
-                        cmd.Parameters.Add(new SqlParameter("@edad", "(SELECT FLOOR(RAND()*(50-18)+18))")); //Generamos una edad aleatoria
+                        cmd.Parameters.Add(new SqlParameter("@edad", 18)); //Generamos una edad aleatoria
                         cmd.Parameters.Add(new SqlParameter("@direccion", "Leon, Guanajuato"));
-                        cmd.Parameters.Add(new SqlParameter("@idSucursal", "2"));
+                        cmd.Parameters.Add(new SqlParameter("@idSucursal", 2));
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -279,7 +279,7 @@ namespace ProyectoV2
                 Console.WriteLine(ex.Message);
             }
 
-            Console.Read();
+            Console.Read();*/
 
         }
 
