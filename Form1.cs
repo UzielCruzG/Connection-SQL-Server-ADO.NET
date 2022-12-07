@@ -21,7 +21,7 @@ namespace ProyectoV2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            /*
             //AGREGAR
             try
             {
@@ -36,32 +36,14 @@ namespace ProyectoV2
                 {
                     sql.Open();
 
-                    using (SqlCommand cmd = new SqlCommand("stp_areas_add", sql))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        //cmd.Parameters.Add(new SqlParameter("@idArea", idArea));
-                        cmd.Parameters.Add(new SqlParameter("@nombre", "Willy Nuevo"));//evitar la vunerabilidad sql injection vidio 5
-                        cmd.Parameters.Add(new SqlParameter("@descripcion", "Willy Nuevo"));
-                        cmd.ExecuteNonQuery();
-                        //DataTable dt = new DataTable();
-                        //SqlDataAdapter da = new SqlDataAdapter(cmd);
-                        //sql.Open();
-
-                        //da.Fill(dt);
-                        //dataGridView1.DataSource = dt;
-                        //SqlDataReader lector;
-                        //lector = cmd.ExecuteReader();
-                    }
-
-
 
                     var transaction = sql.BeginTransaction();
                     using (SqlCommand cmd = new SqlCommand("stp_areas_add", sql, transaction))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         //cmd.Parameters.Add(new SqlParameter("@idArea", idArea));
-                        cmd.Parameters.Add(new SqlParameter("@nombre", "Willy9"));//evitar la vunerabilidad sql injection vidio 5
-                        cmd.Parameters.Add(new SqlParameter("@descripcion", "Willy9"));
+                        cmd.Parameters.Add(new SqlParameter("@nombre", "Desarrollo 2"));//evitar la vunerabilidad sql injection vidio 5
+                        cmd.Parameters.Add(new SqlParameter("@descripcion", "Area de desarrollo de TI"));
                         cmd.ExecuteNonQuery();
                         //DataTable dt = new DataTable();
                         //SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -72,15 +54,15 @@ namespace ProyectoV2
                         //SqlDataReader lector;
                         //lector = cmd.ExecuteReader();
                     }
-                    //throw new ApplicationException("Ooops Error"); //Proboca el error en la transaccion
+                    throw new ApplicationException("Ooops Error"); //Proboca el error en la transaccion
 
 
                     using (SqlCommand cmd = new SqlCommand("stp_areas_add", sql, transaction))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         //cmd.Parameters.Add(new SqlParameter("@idArea", idArea));
-                        cmd.Parameters.Add(new SqlParameter("@nombre", "Willy10"));//evitar la vunerabilidad sql injection vidio 5
-                        cmd.Parameters.Add(new SqlParameter("@descripcion", "Willy10"));
+                        cmd.Parameters.Add(new SqlParameter("@nombre", "Laboratorio de redes"));//evitar la vunerabilidad sql injection vidio 5
+                        cmd.Parameters.Add(new SqlParameter("@descripcion", "Laboratorio de la Uni"));
                         cmd.ExecuteNonQuery();
                         //DataTable dt = new DataTable();
                         //SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -104,8 +86,10 @@ namespace ProyectoV2
 
             Console.Read();
 
-            
+            */
             /*
+            
+            
                         //ACTUALIZAR
                         try
                         {
@@ -120,32 +104,13 @@ namespace ProyectoV2
                             {
                                 sql.Open();
 
-                                using (SqlCommand cmd = new SqlCommand("stp_areas_update", sql))
-                                {
-                                    cmd.CommandType = CommandType.StoredProcedure;
-                                    cmd.Parameters.Add(new SqlParameter("@idArea", 56));
-                                    cmd.Parameters.Add(new SqlParameter("@nombre", "Willyy15"));//evitar la vunerabilidad sql injection vidio 5
-                                    cmd.Parameters.Add(new SqlParameter("@descripcion", "Willyy15"));
-                                    cmd.ExecuteNonQuery();
-                                    //DataTable dt = new DataTable();
-                                    //SqlDataAdapter da = new SqlDataAdapter(cmd);
-                                    //sql.Open();
-
-                                    //da.Fill(dt);
-                                    //dataGridView1.DataSource = dt;
-                                    //SqlDataReader lector;
-                                    //lector = cmd.ExecuteReader();
-                                }
-
-
-
                                 var transaction = sql.BeginTransaction();
                                 using (SqlCommand cmd = new SqlCommand("stp_areas_update", sql, transaction))
                                 {
                                     cmd.CommandType = CommandType.StoredProcedure;
-                                    cmd.Parameters.Add(new SqlParameter("@idArea", 57));
-                                    cmd.Parameters.Add(new SqlParameter("@nombre", "Willy16"));//evitar la vunerabilidad sql injection vidio 5
-                                    cmd.Parameters.Add(new SqlParameter("@descripcion", "Willy16"));
+                                    cmd.Parameters.Add(new SqlParameter("@idArea", 17));
+                                    cmd.Parameters.Add(new SqlParameter("@nombre", "Baños"));//evitar la vunerabilidad sql injection vidio 5
+                                    cmd.Parameters.Add(new SqlParameter("@descripcion", "Baños del edificio"));
                                     cmd.ExecuteNonQuery();
                                     //DataTable dt = new DataTable();
                                     //SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -162,9 +127,9 @@ namespace ProyectoV2
                                 using (SqlCommand cmd = new SqlCommand("stp_areas_update", sql, transaction))
                                 {
                                     cmd.CommandType = CommandType.StoredProcedure;
-                                    cmd.Parameters.Add(new SqlParameter("@idArea", 58));
-                                    cmd.Parameters.Add(new SqlParameter("@nombre", "Willy17"));//evitar la vunerabilidad sql injection vidio 5
-                                    cmd.Parameters.Add(new SqlParameter("@descripcion", "Willy17"));
+                                    cmd.Parameters.Add(new SqlParameter("@idArea", 16));
+                                    cmd.Parameters.Add(new SqlParameter("@nombre", "Consultorio"));//evitar la vunerabilidad sql injection vidio 5
+                                    cmd.Parameters.Add(new SqlParameter("@descripcion", "Consultas"));
                                     cmd.ExecuteNonQuery();
                                     //DataTable dt = new DataTable();
                                     //SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -188,11 +153,70 @@ namespace ProyectoV2
 
                         Console.Read();
             
-             */
+            
 
-            
-            
-            
+
+            */
+            //AGREGAR SOCIOS
+           /* try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString;
+
+                using (SqlConnection sql = new SqlConnection(connectionString))
+                {
+                    sql.Open();
+                    var transaction = sql.BeginTransaction();
+
+                    using (SqlCommand cmd = new SqlCommand("stp_socios_add", sql, transaction))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@nombre", "Prueba"));//evitar la vunerabilidad sql injection vidio 5
+                        cmd.Parameters.Add(new SqlParameter("@apellido", "Montalvo"));
+                        cmd.Parameters.Add(new SqlParameter("@edad", 18)); //Generamos una edad aleatoria
+                        cmd.Parameters.Add(new SqlParameter("@direccion", "Leon, Guanajuato"));
+                        cmd.Parameters.Add(new SqlParameter("@idSucursal", 2));
+                        cmd.ExecuteNonQuery();
+                    }
+                    //throw new ApplicationException("Ooops Error");
+
+                    using (SqlCommand cmd = new SqlCommand("stp_socios_add", sql, transaction))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@nombre", "Prueba1"));//evitar la vunerabilidad sql injection vidio 5
+                        cmd.Parameters.Add(new SqlParameter("@apellido", "Montalvo"));
+                        cmd.Parameters.Add(new SqlParameter("@edad", 18)); //Generamos una edad aleatoria
+                        cmd.Parameters.Add(new SqlParameter("@direccion", "Leon, Guanajuato"));
+                        cmd.Parameters.Add(new SqlParameter("@idSucursal", 3));
+                        cmd.ExecuteNonQuery();
+                    }
+                        transaction.Commit();
+                }
+            }
+            catch (ApplicationException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            Console.Read();*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             /*TRIGGERS*/
             /*Trigger 1 - Sucursal*//*
